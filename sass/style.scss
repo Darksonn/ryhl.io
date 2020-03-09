@@ -1,0 +1,97 @@
+@import 'equation';
+@import 'sidebar';
+@import 'code';
+
+.no-anti-alias {
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+.article-snippet {
+  margin: 20px 0;
+  h3 {
+    margin: 0;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+  a.article-heading:hover {
+    text-decoration: underline;
+  }
+
+}
+
+
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  font-family: verdana;
+}
+
+div#content {
+  display: block;
+  margin: 0 0 0 20rem;
+}
+
+main {
+  display: block;
+  width: 100%;
+  max-width: 50rem;
+  padding: 2rem;
+}
+
+main h1 {
+  margin: 0;
+  font-size: 220%;
+}
+h1, h2, h3, h4 {
+  font-family: sans-serif;
+}
+
+main .postdate {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+
+main img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 512px;
+}
+main div.caption {
+  text-align: center;
+  color: #333;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+}
+
+.youtube-16-9 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  max-height: 337.5px;
+  width: 100%;
+  height: calc(56.25vw - 11.25px);
+}
+.youtube-4-3 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  max-height: 450px;
+  width: 100%;
+  height: calc(75vw - 15px);
+}

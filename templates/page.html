@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block title -%}
+  {{ page.title }} &ndash; {{ config.title }}
+{%- endblock title %}
+{% block pagename -%}
+  {{ page.title }}
+{%- endblock pagename %}
+
+{% block date %}
+    <meta name="revised" content="{{ page.extra.revised }}">
+    <meta name="date" content="{{ page.date }}">
+{%- endblock date %}
+
+{% block keywords -%}
+  {{ page.extra.keywords }}
+{%- endblock keywords %}
+
+{% block description -%}
+  {{ page.description }}
+{%- endblock description %}
+
+{% block body %}
+        <article>
+          <header>
+            <h1>{{ page.title }}</h1>
+            <span class="postdate">Published <time datetime="{{ page.date }}">{{ page.date }}</time></span>
+          </header>
+
+{{ page.content | safe }}
+
+        </article>
+{%- endblock body %}

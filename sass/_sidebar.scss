@@ -1,0 +1,40 @@
+#sidebar {
+  position: fixed;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 17rem;
+  text-align: left;
+  padding: 2rem 1.5rem;
+  color: white;
+  background-color: #202020;
+}
+
+#sidebar a {
+  text-decoration: none;
+  color: inherit;
+}
+#sidebar a:hover {
+  text-decoration: underline;
+}
+
+#sidebar .sitetitle {
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 2px;
+  font-size: 220%;
+}
+
+#sidebar .subtitle {
+  font-size: 175%;
+}
+
+#sidebar-links {
+  list-style: none;
+  padding-left: 0;
+  font-size: 120%;
+  font-family: sans-serif;
+  line-height: 1.4em;
+}

@@ -1,0 +1,21 @@
+base_url = "https://wptest.ryhl.io"
+compile_sass = true
+highlight_code = true
+generate_rss = true
+
+title = "Alice Ryhl"
+description = "Personal website"
+
+default_language = "en"
+
+[extra]
+keywords = "ryhl"
+
+author = "Alice Ryhl"
+author_email = "alice@ryhl.io"
+
+sidebar_links = [
+  { url = "/", text = "Home" },
+  { url = "/#projects", text = "Projects" },
+  { url = "/", text = "CV" }
+]

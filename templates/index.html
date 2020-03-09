@@ -1,0 +1,77 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ config.title }} &ndash; Front page{% endblock title %}</title>
+    <meta name="google-site-verification" content="sVUn1foOgWLWPqSJ1iWbSULe5XK4NIXNoXgDhSUVyY4" />
+    <meta name="keywords" content="{% block keywords %}{{ config.extra.keywords }}{% endblock keywords %}">
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+    <meta name="language" content="en-US">
+    <meta name="robots" content="index,follow">
+    {%- block date %}{% endblock date %}
+    <meta name="author" content="{% block metaauthor %}{{ config.extra.author }}, {{ config.extra.author_email }}{% endblock metaauthor %}">
+    <meta name="pagename" content="{% block pagename %}{{ config.title }} - {{ config.description }}{% endblock pagename %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/style.css?version={{ config.build_timestamp }}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    {% if config.generate_rss -%}
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='rss.xml') | safe }}">
+    {%- endif %}
+    <link rel="canonical" href="{{ current_url | safe }}">
+  </head>
+  <body>
+    <nav id="sidebar">
+      {%- block sidebar %}
+      <a class="sitetitle" href="/">{% block sidebartitle %}{{ config.title }}{% endblock sidebartitle %}</a>
+      <span class="subtitle">{{ config.description }}</span>
+
+      <ul id="sidebar-links">
+        {%- for link in config.extra.sidebar_links %}
+        <li><a href="{{link.url | safe}}">{{link.text}}</a></li>
+        {%- endfor %}
+      </ul>
+      {%- endblock sidebar %}
+    </nav>
+    <div id="content">
+      <main>
+        {%- block body %}
+        <h1>{{ section.title }}</h1>
+
+{{ section.content | safe }}
+
+<section>
+<h2 id="projects">Projects and articles</h2>
+
+I have written a few articles, most of which are about a project of mine.
+Note that some of these are quite old.
+
+{% set blog = get_section(path="blog/_index.md") %}
+{%- set blogpages = blog.pages | sort(attribute="date") | reverse %}
+{%- for page in blogpages %}
+<article class="article-snippet">
+  <header>
+  <h3><a href="{{ page.permalink | safe }}">
+    {{ page.title }}
+  </a></h3>
+  <time class="postdate" datetime="{{ page.date }}">{{ page.date }}</time>
+  </header>
+  <div class="description">
+    {{ page.summary | safe }}
+    <a href="{{ page.permalink | safe }}">Continue Reading</a>
+  </div>
+</article>
+{%- endfor %}
+</section>
+
+        {%- endblock body %}
+      </main>
+    </div>
+  </body>
+</html>
