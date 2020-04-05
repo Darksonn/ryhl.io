@@ -13,7 +13,7 @@
 }
 
 .article-snippet {
-  margin: 20px 0;
+  margin: 20px -10px;
   h3 {
     margin: 0;
     a {
@@ -24,6 +24,11 @@
   a.article-heading:hover {
     text-decoration: underline;
   }
+
+  background: antiquewhite;
+  border-radius: 15px;
+  border: solid 2px sandybrown;
+  padding: 10px;
 
 }
 
