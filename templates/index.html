@@ -27,17 +27,30 @@
     <link rel="canonical" href="{{ current_url | safe }}">
   </head>
   <body>
-    <nav id="sidebar">
+    <nav id="sidebar" class="bar">
       {%- block sidebar %}
       <a class="sitetitle" href="/">{% block sidebartitle %}{{ config.title }}{% endblock sidebartitle %}</a>
       <span class="subtitle">{{ config.description }}</span>
 
-      <ul id="sidebar-links">
+      <ul class="sidebar-links">
         {%- for link in config.extra.sidebar_links %}
         <li><a href="{{link.url | safe}}">{{link.text}}</a></li>
         {%- endfor %}
       </ul>
       {%- endblock sidebar %}
+    </nav>
+    <nav id="topbar" class="bar">
+      {%- block topbar %}
+      <a class="sitetitle" href="/">{% block topbartitle %}{{ config.title }}{% endblock sidebartitle %}</a>
+      <img id="topbar-burger" src="/hamburger.svg" onclick="document.getElementById('topbar-open').style.display = window.topOpen ? 'none' : 'block'; window.topOpen = !window.topOpen">
+      <div id="topbar-open" style="display:none">
+        <ul class="sidebar-links">
+          {%- for link in config.extra.sidebar_links %}
+          <li><a href="{{link.url | safe}}">{{link.text}}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endblock topbar %}
     </nav>
     <div id="content">
       <main>

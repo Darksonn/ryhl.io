@@ -4,22 +4,22 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: 17rem;
+  width: 16rem;
   text-align: left;
   padding: 2rem 1.5rem;
   color: white;
   background-color: #000000;
 }
 
-#sidebar a {
+nav.bar a {
   text-decoration: none;
   color: inherit;
 }
-#sidebar a:hover {
+nav.bar a:hover {
   text-decoration: underline;
 }
 
-#sidebar .sitetitle {
+nav.bar .sitetitle {
   font-family: sans-serif;
   font-weight: bold;
   margin-top: 0;
@@ -27,14 +27,64 @@
   font-size: 220%;
 }
 
-#sidebar .subtitle {
+.subtitle {
   font-size: 175%;
 }
 
-#sidebar-links {
+.sidebar-links {
   list-style: none;
   padding-left: 0;
   font-size: 120%;
   font-family: sans-serif;
   line-height: 1.4em;
+}
+
+#topbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4.5rem;
+  color: white;
+  line-height: 4.5rem;
+  padding-left: 1.5rem;
+  background-color: #000000;
+}
+
+#topbar-burger {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  height: 2.5rem;
+}
+
+#topbar-open {
+  position: fixed;
+  top: 4.5rem;
+  left: 0;
+  right: 0;
+  padding-left: 1.5rem;
+  padding-bottom: 1rem;
+  background-color: #000000;
+}
+#topbar-open > ul {
+  margin: 0;
+  font-size: 150%;
+}
+
+@media (max-width: 55rem) {
+  div#content {
+    margin: 4.5rem 0 0 0 !important;
+  }
+  main {
+    padding: 1.5rem !important;
+    padding-top: 1rem !important;
+  }
+  #sidebar {
+    display: none !important;
+  }
+  #topbar {
+    display: block !important;
+  }
 }
