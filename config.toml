@@ -1,4 +1,4 @@
-base_url = "https://wptest.ryhl.io"
+base_url = "https://ryhl.io"
 compile_sass = true
 highlight_code = true
 generate_rss = true
@@ -16,6 +16,7 @@ author_email = "alice@ryhl.io"
 
 sidebar_links = [
   { url = "/", text = "Home" },
-  { url = "/#projects", text = "Projects" },
-  { url = "/", text = "CV" }
+  { url = "https://www.linkedin.com/in/aliceryhl/", text = "LinkedIn" },
+  { url = "https://github.com/Darksonn/", text = "GitHub" },
+  { url = "mailto:alice@ryhl.io", text = "Email" }
 ]

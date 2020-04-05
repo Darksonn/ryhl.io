@@ -1,5 +1,5 @@
 #!/bin/sh
 
 zola build
-rsync -avz --delete ./public/* wptest:/var/www/html
+rsync -avz --delete ./public/* nine:/var/www/html
 
