@@ -18,5 +18,6 @@ sidebar_links = [
   { url = "/", text = "Home" },
   { url = "https://www.linkedin.com/in/aliceryhl/", text = "LinkedIn" },
   { url = "https://github.com/Darksonn/", text = "GitHub" },
-  { url = "mailto:alice@ryhl.io", text = "Email" }
+  { url = "mailto:alice@ryhl.io", text = "Email" },
+  { url = "/rss.xml", text = "Rss Feed", skip_mobile = true }
 ]
