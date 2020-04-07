@@ -7,8 +7,15 @@
     max-width: none;
   }
   img {
+    display: block;
     page-break-before: auto;
     page-break-after: auto;
     page-break-inside: avoid;
+  }
+  html, body {
+    color: inherit !important;
+  }
+  h1, h2, h3, h4 {
+    color: inherit !important;
   }
 }
