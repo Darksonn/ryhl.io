@@ -64,7 +64,7 @@ starting guesses converge to? Below is shown some F# code which creates an
 image with each pixel given a colour corresponding to the root that it
 converged to. I picked the function <i>f</i>(<i>x</i>) =
 <i>x</i><sup>3</sup>&minus;1 as the one used in the iteration step, since
-it's a rather simple function, that's not so simple it doesn't show any
+it's a rather simple function, but not so simple it doesn't show any
 fractal behaviour.
 
 ```fsharp

@@ -1,0 +1,14 @@
+@media print {
+  #sidebar, #topbar { display: none !important; }
+  div#content {
+    margin: 0 !important;
+  }
+  main {
+    max-width: none;
+  }
+  img {
+    page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+  }
+}

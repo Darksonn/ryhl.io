@@ -84,10 +84,10 @@ nav.bar .sitetitle {
   main img {
     max-width: 100% !important;
   }
-  #sidebar {
-    display: none !important;
+  nav#sidebar {
+    display: none;
   }
-  #topbar {
-    display: block !important;
+  nav#topbar {
+    display: block;
   }
 }
