@@ -41,7 +41,7 @@
     <nav id="topbar" class="bar">
       {%- block topbar %}
       <a class="sitetitle" href="/">{% block topbartitle %}{{ config.title }}{% endblock sidebartitle %}</a>
-      <img id="topbar-burger" src="/hamburger.svg" onclick="document.getElementById('topbar-open').style.display = window.topOpen ? 'none' : 'block'; window.topOpen = !window.topOpen">
+      <img id="topbar-burger" alt="open navigation" src="/hamburger.svg" onclick="document.getElementById('topbar-open').style.display = window.topOpen ? 'none' : 'block'; window.topOpen = !window.topOpen">
       <div id="topbar-open" style="display:none">
         <ul class="sidebar-links">
           {%- for link in config.extra.sidebar_links %}
