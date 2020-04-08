@@ -38,28 +38,33 @@ Having to define both the function and its derivative sucks. Luckily we can get
 away with only the function by using [dual numbers][dual numbers].
 
 In dual numbers, we add a new value &epsilon; to the number system. This new
-value satisfies the identity &epsilon;<sup>2</sup>&nbsp;=&nbsp;0, similar to
+value satisfies the identity
+<span role="img" aria-label="epsilon squared = 0">&epsilon;<sup>2</sup>&nbsp;=&nbsp;0</span>,
+similar to
 how the imaginary unit is introduced for complex numbers. This is cool because
-the Taylor expansion of <i>f</i>(<i>x</i>+&epsilon;) around <i>x</i> can be
-written in following form:
+the Taylor expansion of
+<span role="img" aria-label="f(x + epsilon )"><i>f</i>(<i>x</i>+&epsilon;)</span>
+around <i>x</i> can be written in following form:
 
-<div class="display-style">
-  <i>f</i>(<i>x</i>+&epsilon;) = <i>f</i>(<i>x</i>) + <i>f</i><div
-     class="kern3"></div>ʹ(<i>x</i>)&middot;&epsilon; +
-   O(<i>x</i><sup>2</sup>)&middot;&epsilon;<sup>2</sup>
+<div class="display-style" role="img" aria-label="f(x + epsilon ) = f(x) + f'(x) epsilon + O(x squared) epsilon squared">
+  <i>f</i>(<i>x</i>+&epsilon;) = <i>f</i>(<i>x</i>) + <i>f</i><span class="kern3"></span>ʹ(<i>x</i>)&middot;&epsilon; + O(<i>x</i><sup>2</sup>)&middot;&epsilon;<sup>2</sup>
 </div>
 
 This means every term beside the first two are multiplied by
-&epsilon;<sup>2</sup>, which is zero, allowing us to write
-<i>f</i>(<i>x</i>+&epsilon;) simply as <i>f</i>(<i>x</i>) + <i>f</i><span
-class="kern3"></span>ʹ(<i>x</i>)&middot;&epsilon;. More generally we have
-<i>f</i>(<i>x</i>+<i>a</i>&epsilon;)&nbsp;=&nbsp;<i>f</i>(<i>x</i>)
-   + <i>af</i><span class="kern3"></span>ʹ(<i>x</i>)&middot;&epsilon;.
+<span role="img" aria-label="epsilon^2">&epsilon;<sup>2</sup></span>,
+which is zero, allowing us to write
+<span role="img" aria-label="f(x + epsilon )"><i>f</i>(<i>x</i>+&epsilon;)</span>
+simply as
+<span role="img" aria-label="f(x) + f'(x) epsilon"><i>f</i>(<i>x</i>) + <i>f</i><span class="kern3"></span>ʹ(<i>x</i>)&middot;&epsilon;</span>.
+More generally we have
+<span role="img" aria-label="f(x+ a epsilon ) = f(x) + a f'(x) epsilon">
+  <i>f</i>(<i>x</i>+<i>a</i>&epsilon;)&nbsp;=&nbsp;<i>f</i>(<i>x</i>) + <i>af</i><span class="kern3"></span>ʹ(<i>x</i>)&middot;&epsilon;</span>.
 
 Using these properties, you can type the function once in your program, and
-when you evaluate the function at the dual number <i>x</i>+&epsilon;, you
-obtain the value and derivative at that point.  My implementation of these
-numbers can be found in [the GitHub repository][dualcu].
+when you evaluate the function at the dual number <span role="img"
+aria-label="x + epsilon"><i>x</i>+&epsilon;</span>, you obtain the value and
+derivative at that point.  My implementation of these numbers can be found in
+[the GitHub repository][dualcu].
 
 ## 360&deg; videos
 
@@ -74,16 +79,15 @@ bottom than in the middle.
 
 ![A newton fractal on the Riemann sphere shown using an equirectangular projection](riemann.png)
 <div class="caption">
-  A newton fractal on the Riemann sphere shown using an equirectangular
-  projection.
+  A newton fractal on the Riemann sphere shown using an equirectangular projection.
 </div>
 
 Since I was making newton fractals, I needed to map the pixels to complex
 numbers. On the Riemann sphere, one can compute the complex number
 corresponding to a specific longitude and latitude using the formula
 
-<div class="display-style">
-  <i>z</i> = tan(φ)&middot;e<sup>i<div class="kern1"></div>λ</sup>,
+<div class="display-style" role="img" aria-label="z = tan(theta) exp(i lambda)">
+  <i>z</i> = tan(φ)&middot;e<sup>i<span class="kern1"></span>λ</sup>,
 </div>
 
 where φ is the latitude, and λ is the longitude. Then all there is left is to

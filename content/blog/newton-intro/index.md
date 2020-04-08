@@ -15,10 +15,7 @@ write a generator of newton fractals. Here's an example of a newton fractal:
 
 ![Example of a newton fractal](newton-thumb.png)
 <div class="caption">
-    Newton fractal for <i>z</i><sup>8</sup><div class="kern3"></div>+<div
-      class="kern3"></div>15<div class="kern1"></div><i>z</i><sup>4</sup><div
-      class="kern3"></div>&minus;<div class="kern3"></div>16 in the square
-    from 0.5+0.5i to 1.5+1.5i.
+    Newton fractal for <span role="img" aria-label="z^8 + 15z^4 - 16"><i>z</i><sup>8</sup><span class="kern3"></span>+<span class="kern3"></span>15<span class="kern1"></span><i>z</i><sup>4</sup><span class="kern3"></span>&minus;<span class="kern3"></span></span>16 in the square from 0.5+0.5i to 1.5+1.5i.
 </div>
 
 ## What is a newton fractal?
@@ -32,20 +29,20 @@ Newton's method is a way to approximate solutions to an equation of the form
 <i>f</i>(<i>x</i>) = 0. To use the method, first try to guess a solution
 <i>x</i><sub>0</sub> to the equation, and use the following formula:
 
-<div class="display-style">
+<div class="display-style" role="img" aria-label="x_n+1 = x_n - f(x_n) / f'(x_n)">
   <i>x</i><sub><i>n</i>+1</sub> = <i>x<sub>n</sub></i> &minus;
-  <div class="frac">
-    <div class="fracouter">
-      <div class="fracnum">
+  <span class="frac">
+    <span class="fracouter">
+      <span class="fracnum">
         <i>f</i>(<i>x<sub>n</sub></i>)
-      </div>
-    </div>
-    <div class="fracouter">
-      <div class="fracden">
-        <i>f</i><div class="kern3"></div>ʹ(<i>x<sub>n</sub></i>)
-      </div>
-    </div>
-  </div>
+      </span>
+    </span>
+    <span class="fracouter">
+      <span class="fracden">
+        <i>f</i><span class="kern3"></span>ʹ(<i>x<sub>n</sub></i>)
+      </span>
+    </span>
+  </span>
 </div>
 
 The value <i>x</i><sub>1</sub> that you calculate with this formula will be
@@ -62,10 +59,10 @@ functions, but it works just fine on complex-valued functions as well.
 An interesting thing to investigate is then, which root do the different
 starting guesses converge to? Below is shown some F# code which creates an
 image with each pixel given a colour corresponding to the root that it
-converged to. I picked the function <i>f</i>(<i>x</i>) =
-<i>x</i><sup>3</sup>&minus;1 as the one used in the iteration step, since
-it's a rather simple function, but not so simple it doesn't show any
-fractal behaviour.
+converged to. I picked the function
+<span role="img" aria-label="f(x) = x cubed - 1"><i>f</i>(<i>x</i>) = <i>x</i><sup>3</sup>&minus;1</span>
+as the one used in the iteration step, since it's a rather simple function,
+but not so simple it doesn't show any fractal behaviour.
 
 ```fsharp
 open System
@@ -122,9 +119,7 @@ image:
 
 ![The generated fractal](newton-ugly.png)
 <div class="caption">
-  Newton fractal for <i>z</i><sup>3</sup><div
-    class="kern3"></div>&minus;<div class="kern3"></div>1 in the square from
-  &minus;1&minus;<div class="kern1"></div>i to 1+<div class="kern1"></div>i.
+  Newton fractal for <span role="img" aria-label="z cubed - 1"><i>z</i><sup>3</sup><span class="kern3"></span>&minus;<span class="kern3"></span>1</span> in the square from <span role="img" aria-label="-1-i">&minus;1&minus;<span class="kern1"></span>i</span> to <span role="img" aria-label="1+i">1+<span class="kern1"></span>i</span>.
 </div>
 <p>
 With a preliminary result like this, it's clear that this has the potential
@@ -160,9 +155,7 @@ Running the updated code produces the following image:
 
 ![Newton fractal where the darkness depends on the iteration count](newton-iters.png)
 <div class="caption">
-  Newton fractal for <i>z</i><sup>3</sup><div
-    class="kern3"></div>&minus;<div class="kern3"></div>1 in the square from
-  &minus;1&minus;<div class="kern1"></div>i to 1+<div class="kern1"></div>i.
+  Newton fractal for <span role="img" aria-label="z cubed - 1"><i>z</i><sup>3</sup><span class="kern3"></span>&minus;<span class="kern3"></span>1</span> in the square from <span role="img" aria-label="-1-i">&minus;1&minus;<span class="kern1"></span>i</span> to <span role="img" aria-label="1+i">1+<span class="kern1"></span>i</span>.
 </div>
 
 It would be even nicer if we could make the brightness change smoothly. If
@@ -194,9 +187,7 @@ Running the updated code produces the following image:
 
 ![A smoother fractal with very dark spots](newton-smooth-dark.png)
 <div class="caption">
-  Newton fractal for <i>z</i><sup>3</sup><div
-    class="kern3"></div>&minus;<div class="kern3"></div>1 in the square from
-  &minus;1&minus;<div class="kern1"></div>i to 1+<div class="kern1"></div>i.
+  Newton fractal for <span role="img" aria-label="z cubed - 1"><i>z</i><sup>3</sup><span class="kern3"></span>&minus;<span class="kern3"></span>1</span> in the square from <span role="img" aria-label="-1-i">&minus;1&minus;<span class="kern1"></span>i</span> to <span role="img" aria-label="1+i">1+<span class="kern1"></span>i</span>.
 </div>
 
 This is better than before, but adding the distances linearly doesn't quite
@@ -218,9 +209,7 @@ Running the updated code produces the following image:
 
 ![A smoother fractal with a smoother gradient](newton-smooth-nice.png)
 <div class="caption">
-  Newton fractal for <i>z</i><sup>3</sup><div
-    class="kern3"></div>&minus;<div class="kern3"></div>1 in the square from
-  &minus;1&minus;<div class="kern1"></div>i to 1+<div class="kern1"></div>i.
+  Newton fractal for <span role="img" aria-label="z cubed - 1"><i>z</i><sup>3</sup><span class="kern3"></span>&minus;<span class="kern3"></span>1</span> in the square from <span role="img" aria-label="-1-i">&minus;1&minus;<span class="kern1"></span>i</span> to <span role="img" aria-label="1+i">1+<span class="kern1"></span>i</span>.
 </div>
 
 The final code is available [here][final].
