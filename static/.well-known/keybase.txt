@@ -1,0 +1,52 @@
+https://keybase.io/aliceryhl
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://ryhl.io
+  * I am aliceryhl (https://keybase.io/aliceryhl) on keybase.
+  * I have a public key ASCBh321x_CCFILFe3_5GL5YRZ8xZXCfr15lFnQyLzT9xwo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101b2516e6c74613b321d99327b340986d7dcb21371baf75159982dfdac266046320a",
+            "host": "keybase.io",
+            "kid": "012081877db5c7f0821482c57b7ff918be58459f3165709faf5e651674322f34fdc70a",
+            "uid": "16c79715ff6c94559cac1e20c9f6cf19",
+            "username": "aliceryhl"
+        },
+        "service": {
+            "hostname": "ryhl.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.18"
+    },
+    "ctime": 1486416142,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1486416118,
+        "hash": "7e97140fead6c17bc29df46aceb0f29cafdff570f332d7334fa09f29ac65edc2a807c2e1682c2892cd9f5e957c7f40d6fc4cb5e60b31c9fc7395d8e779171e9a",
+        "seqno": 838878
+    },
+    "prev": "22dfe65871d280cb8ccad4f05451c32f911011168720107b68077c4233506cfc",
+    "seqno": 10,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEggYd9tcfwghSCxXt/+Ri+WEWfMWVwn69eZRZ0Mi80/ccKp3BheWxvYWTFAvF7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxYjI1MTZlNmM3NDYxM2IzMjFkOTkzMjdiMzQwOTg2ZDdkY2IyMTM3MWJhZjc1MTU5OTgyZGZkYWMyNjYwNDYzMjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwODE4NzdkYjVjN2YwODIxNDgyYzU3YjdmZjkxOGJlNTg0NTlmMzE2NTcwOWZhZjVlNjUxNjc0MzIyZjM0ZmRjNzBhIiwidWlkIjoiMTZjNzk3MTVmZjZjOTQ1NTljYWMxZTIwYzlmNmNmMTkiLCJ1c2VybmFtZSI6ImFsaWNlcnlobCJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoicnlobC5pbyIsInByb3RvY29sIjoiaHR0cHM6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjE4In0sImN0aW1lIjoxNDg2NDE2MTQyLCJleHBpcmVfaW4iOjUwNDU3NjAwMCwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE0ODY0MTYxMTgsImhhc2giOiI3ZTk3MTQwZmVhZDZjMTdiYzI5ZGY0NmFjZWIwZjI5Y2FmZGZmNTcwZjMzMmQ3MzM0ZmEwOWYyOWFjNjVlZGMyYTgwN2MyZTE2ODJjMjg5MmNkOWY1ZTk1N2M3ZjQwZDZmYzRjYjVlNjBiMzFjOWZjNzM5NWQ4ZTc3OTE3MWU5YSIsInNlcW5vIjo4Mzg4Nzh9LCJwcmV2IjoiMjJkZmU2NTg3MWQyODBjYjhjY2FkNGYwNTQ1MWMzMmY5MTEwMTExNjg3MjAxMDdiNjgwNzdjNDIzMzUwNmNmYyIsInNlcW5vIjoxMCwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEDCgGRpvC1EVo4/TT85I8F5FANfDTJq3DERIoOlcp6w0uRPyzzieGq9P7HPfEabNeTf70AQ706DbNmJx3O40xMHqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgOzGRjSwvBBTcF5jMFK0CSw8XkjuZYbriFeL3NabKkNajdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/aliceryhl
+
