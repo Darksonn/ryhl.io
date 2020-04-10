@@ -4,7 +4,7 @@ date = 2017-06-27
 description = "This page functions as a home page for my rust library backblaze-b2-rs, which is used for interacting with the web service Backblaze B2."
 
 [extra]
-revised = 2020-04-05
+revised = 2020-04-10
 keywords = "backblaze, b2, backup, library, rust"
 +++
 

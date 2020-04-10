@@ -4,7 +4,7 @@ date = 2016-12-18
 description = "I've chosen to make a PCB that simulates the game of life on a 5 by 5 LED grid, and can be remote controlled with Bluetooth. Here is a video of the finished product:"
 
 [extra]
-revised = 2019-01-20
+revised = 2020-04-10
 keywords = "game of life, electronics, arduino"
 +++
 

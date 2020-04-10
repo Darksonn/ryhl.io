@@ -4,7 +4,7 @@ date = 2016-12-06
 description = "In order to investigate the behaviour of Newton Fractals at infinity, I've plotted Newton Fractals on the Riemann sphere. Here's an animated video of a Newton Fractal plotted on the Riemann sphere using youtubes 360° video feature."
 
 [extra]
-revised = 2019-01-19
+revised = 2020-04-10
 keywords = "fractal, newton fractal, riemann sphere, dual numbers"
 +++
 

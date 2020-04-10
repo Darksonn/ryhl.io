@@ -4,7 +4,7 @@ date = 2016-10-30
 description = "When I try to learn a new programming language, I don't write a hello world. Instead, I write a generator of newton fractals."
 
 [extra]
-revised = 2019-01-19
+revised = 2020-04-10
 keywords = "fractal, newton fractal, fsharp, F#"
 +++
 
