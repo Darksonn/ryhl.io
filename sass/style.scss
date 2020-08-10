@@ -63,6 +63,17 @@ h1, h2, h3, h4 {
   color: #2b303b;
 }
 
+table {
+  border-collapse: collapse;
+}
+th {
+  text-align: left;
+}
+th, td {
+  border: 1px solid black;
+  padding: 6px;
+}
+
 main .postdate {
   font-size: 0.9rem;
   color: #555;
