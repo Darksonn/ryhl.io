@@ -133,6 +133,8 @@ properties of each reference. Let's start out with a summary:
 | References in other threads | Yes  | No       | No         |
 | Allows projection           | Yes  | Yes      | Sometimes  |
 
+(We will discuss what projection is below.)
+
 In the case of an **immutable reference**, it is guaranteed that the value behind the
 reference is not modified while the reference exists. Note that an immutable reference
 also prevents modification from other places while you hold the reference. This makes
