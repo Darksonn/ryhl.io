@@ -329,11 +329,15 @@ In case you forgot, here's the main thing you need to remember:
 
 Below you will find a cheat sheet of what methods you can use when you want to block:
 
+<div style="overflow-x: auto;max-width: 100%;">
+
 |                    | CPU-bound computation | Synchronous IO | Running forever |
 |--------------------|-----------------------|----------------|-----------------|
 | **`spawn_blocking`** | Suboptimal            | OK             | No              |
 | **`rayon`**          | OK                    | No             | No              |
 | **Dedicated thread** | OK                    | OK             | OK              |
+
+</div>
 
 Finally, I recommend checking out [the chapter on shared state] from the Tokio tutorial.
 This chapter explains how you can correctly use [`std::sync::Mutex`] in async code, and
