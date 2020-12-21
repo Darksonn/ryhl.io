@@ -16,27 +16,29 @@ The intended audience of this blog post is new users of async Rust. I will be us
 [Tokio] runtime for the examples, but the points raised here apply to any asynchronous
 runtime.
 
+If you remember only one thing from this article, this should be it:
+
+> Async code should never spend a long time without reaching an `.await`.
+
 [Tokio]: https://tokio.rs/
 
 <!-- more -->
 
-The problem that async Rust exists to solve is that creating a new thread is a somewhat
-expensive operation, so if you want to execute a very large number of operations at the
-same time, you will eventually run into problems due to the large number of threads.
-There are various solutions to this problem in different programming languages, but they
-all boil down to the same thing: very quickly swap the currently running task on each
-thread, such that all of the tasks get an opportunity to run. In Rust, such swapping
-happens when you `.await` something.
+## Blocking vs. non-blocking code
+
+The naive way to write an application that works on many things at the same time is to
+spawn a new thread for every task. If the number of tasks is small, this is a perfectly
+fine solution, but as the number of tasks becomes large, you will eventually run into
+problems due to the large number of threads. There are various solutions to this problem
+in different programming languages, but they all boil down to the same thing: very
+quickly swap out the currently running task on each thread, such that all of the tasks
+get an opportunity to run. In Rust, this swapping happens when you `.await` something.
 
 When writing async Rust, the phrase “blocking the thread” means “preventing the runtime
 from swapping the current task”. This can be a major issue because it means that other
 tasks on the same runtime will stop running until the thread is no longer being blocked.
 To prevent this, we should write code that can be swapped quickly, which you do by never
 spending a long time away from an `.await`.
-
-If you remember only one thing from this article, this should be it:
-
-> Async code should never spend a long time without reaching an `.await`.
 
 Let's take an example:
 
@@ -118,7 +120,7 @@ async fn sleep_then_print(timer: i32) {
     println!("Start timer {}.", timer);
 
     tokio::time::sleep(Duration::from_secs(1)).await;
-//                               ^ execution can be paused here
+//                                            ^ execution can be paused here
 
     println!("Timer {} done.", timer);
 }
@@ -147,17 +149,26 @@ Timer 3 done.
 The code runs in just one second, and properly runs all three functions at the same time
 as desired.
 
-Be aware that it is not always this obvious. By using `tokio::join!`, all three tasks are
-guaranteed to run on the same thread, but if you replace it with `tokio::spawn` and use a
-multi-threaded runtime, you _will_ be able to run multiple of these timer tasks until you
-run out of threads. There are typically around 8 threads in the default Tokio runtime,
-so in that case you would be able to run eight of them.
+Be aware that it is not always this obvious. By using [`tokio::join!`], all three tasks
+are guaranteed to run on the same thread, but if you replace it with [`tokio::spawn`] and
+use a multi-threaded runtime, you _will_ be able to run multiple blocking tasks until you
+run out of threads. The default Tokio runtime spawns one thread per CPU core, and you
+will typically have around 8 CPU cores. This is enough that you can miss the issue when
+testing locally, but sufficiently few that you will very quickly run out of threads when
+running the code for real.
+
+To give a sense of scale of how much time is too much, a good rule of thumb is no more
+than 10 to 100 microseconds between each `.await`. That said, this depends on the kind of
+application you are writing.
 
 [`sleep`]: https://docs.rs/tokio/0.3/tokio/time/fn.sleep.html
+[`tokio::join!`]: https://docs.rs/tokio/0.3/tokio/macro.join.html
+[`tokio::spawn`]: https://docs.rs/tokio/0.3/tokio/fn.spawn.html
 
 ## What if I want to block?
 
-Sometimes we want to block the thread. There are two common cases of this:
+Sometimes we just want to block the thread. This is completely normal. There are two
+common reasons for this:
 
  1. Expensive CPU-bound computation.
  2. Synchronous IO.
@@ -185,7 +196,7 @@ an upper limit of around 500 threads, so you can spawn quite a lot of blocking o
 on this thread pool.
 
 Since the thread pool has so many threads, it is best suited for blocking IO such as
-doing file IO or using a blocking database library such as [`diesel`].
+interacting with the file system or using a blocking database library such as [`diesel`].
 
 The thread pool is poorly suited for expensive CPU-bound computations, since it has many
 more threads than you have CPU cores on your computer. CPU-bound computations run most
@@ -205,8 +216,7 @@ async fn main() {
     // This is running on Tokio. We may not block here.
 
     let blocking_task = tokio::task::spawn_blocking(|| {
-        // This is running on a blocking thread.
-        // Blocking here is ok.
+        // This is running on a thread where blocking is fine.
         println!("Inside spawn_blocking");
     });
 
@@ -321,14 +331,14 @@ Below you will find a cheat sheet of what methods you can use when you want to b
 
 |                    | CPU-bound computation | Synchronous IO | Running forever |
 |--------------------|-----------------------|----------------|-----------------|
-| **`spawn_blocking`** | (OK)                  | OK             | No              |
+| **`spawn_blocking`** | Suboptimal            | OK             | No              |
 | **`rayon`**          | OK                    | No             | No              |
 | **Dedicated thread** | OK                    | OK             | OK              |
 
 Finally, I recommend checking out [the chapter on shared state] from the Tokio tutorial.
 This chapter explains how you can correctly use [`std::sync::Mutex`] in async code, and
 goes more in-depth with why this is okay even though locking a mutex is blocking.
-(spoiler: if you block for a short time, is it really blocking?)
+(Spoiler: if you block for a short time, is it really blocking?)
 
 I also strongly recommend the article [Reducing tail latencies with automatic cooperative
 task yielding][coop] from the Tokio blog.
@@ -336,3 +346,9 @@ task yielding][coop] from the Tokio blog.
 [the chapter on shared state]: https://tokio.rs/tokio/tutorial/shared-state
 [`std::sync::Mutex`]: https://doc.rust-lang.org/stable/std/sync/struct.Mutex.html
 [coop]: https://tokio.rs/blog/2020-04-preemption
+
+Thanks to [Chris Krycho] and [snocl] for reading drafts of this post and providing
+helpful advice. All mistakes are mine.
+
+[Chris Krycho]: https://v5.chriskrycho.com/
+[snocl]: https://snor.re/
