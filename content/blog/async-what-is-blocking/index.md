@@ -111,7 +111,7 @@ However if we instead use Tokio's [`sleep`] function, which uses an `.await` to 
 the function will behave correctly:
 
 <div class="with-exec-button">
-<a class="exec-button" target="_blank" href="https://play.rust-lang.org/?edition=2018&amp;gist=3eb8e5bba897b8bdb5e34220d886984a">&#9654;&#xFE0E;</a>
+<a class="exec-button" target="_blank" href="https://play.rust-lang.org/?edition=2018&amp;gist=adbbb272bbabb588eebfa0cb76484f5c">&#9654;&#xFE0E;</a>
 
 ```rs
 use tokio::time::Duration;
@@ -208,7 +208,7 @@ you only need a few CPU-bound computations, I wont blame you for running them on
 [`diesel`]: https://lib.rs/crates/diesel
 
 <div class="with-exec-button">
-<a class="exec-button" target="_blank" href="https://play.rust-lang.org/?edition=2018&amp;gist=2d63913c8315108b2d66d3ea2960c5e4">&#9654;&#xFE0E;</a>
+<a class="exec-button" target="_blank" href="https://play.rust-lang.org/?edition=2018&amp;gist=4ecb1eced0947e4b795b4c988da34edb">&#9654;&#xFE0E;</a>
 
 ```rs
 #[tokio::main]
