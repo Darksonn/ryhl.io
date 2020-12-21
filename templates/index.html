@@ -11,7 +11,7 @@
     <meta name="author" content="{% block metaauthor %}{{ config.extra.author }}, {{ config.extra.author_email }}{% endblock metaauthor %}">
     <meta name="pagename" content="{% block pagename %}{{ config.title }} - {{ config.description }}{% endblock pagename %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{ get_url(path="style.css", cachebust=true) }}">
+    <link rel="stylesheet" type="text/css" href="{{ get_url(path="style.css", cachebust=true) | safe }}">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
