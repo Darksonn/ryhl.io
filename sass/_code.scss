@@ -6,3 +6,17 @@ pre {
   overflow-x: auto;
   font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
 }
+
+.with-exec-button {
+  position: relative;
+}
+.exec-button {
+  right: 12px;
+  top: 10px;
+  display: block;
+  font-size: 1.5rem;
+  padding: 4px;
+  color: white;
+  text-decoration: none;
+  position: absolute;
+}
