@@ -4,7 +4,7 @@ date = 2020-08-15
 description = "The purpose of this blog post is to celebrate the anniversary of two really neat methods on the Cell type: from_mut and as_slice_of_cells. Both methods were released in version 1.37.0 of Rust, exactly one year ago from the date this post was published."
 
 [extra]
-revised = 2020-08-15
+revised = 2020-12-26
 keywords = "rust, shared, mutable, cell"
 +++
 
@@ -221,7 +221,7 @@ So what kinds of projections _can_ you do with cells? You can do slice projectio
 fact, the [`Cell::as_slice_of_cells`] method lets you do exactly that. It would also be
 safe to perform struct projection, as replacing the entire struct still leaves each field
 in a valid state.  Unfortunately, the standard library provides no safe way to do so,
-but [there are some crates that can do it][cell-project].
+but there are some crates that can do it such as [`cell-project`] or [`dioptre`].
 
 ## Conclusion
 
@@ -251,4 +251,5 @@ a different angle.
 [rust-1.37]: https://blog.rust-lang.org/2019/08/15/Rust-1.37.0.html
 [single-threaded]: https://manishearth.github.io/blog/2015/05/17/the-problem-with-shared-mutability/
 [unique]: https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html
-[cell-project]: https://www.abubalay.com/blog/2020/01/05/cell-field-projection
+[`cell-project`]: https://crates.io/crates/cell-project
+[`dioptre`]: https://www.abubalay.com/blog/2020/01/05/cell-field-projection
