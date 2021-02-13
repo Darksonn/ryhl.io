@@ -1,10 +1,10 @@
 +++
 title = "Actors with Tokio"
-date = 2020-10-01
-description = ""
+date = 2021-02-13
+description = "This article is about building actors with Tokio directly, without using any actor libraries such as Actix. This turns out to be rather easy to do, however there are some details you should be aware of:"
 
 [extra]
-revised = 2020-09-30
+revised = 2021-02-13
 keywords = "rust, tokio, actor, async, await, actix"
 +++
 
@@ -17,7 +17,6 @@ there are some details you should be aware of:
  3. Handles to the actor.
  4. Backpressure and bounded channels.
  5. Graceful shutdown.
- 6. `Arc`, `Mutex` and shared state.
 
 The techniques outlined in this article should work with any executor, but for
 simplicity we will only talk about Tokio.  There is some overlap with the
@@ -33,8 +32,8 @@ Before we can talk about how to write an actor, we need to know what an actor
 is. The basic idea behind an actor is to spawn a self-contained task that
 performs some job independently of other parts of the program. Typically these
 actors communicate with the rest of the program through the use of message
-passing channels. Since actors run independently, programs designed using them
-are naturally parallel.
+passing channels. Since each actor runs independently, programs designed using
+them are naturally parallel.
 
 A common use-case of actors is to assign the actor exclusive ownership of some
 resource you want to share, and then let other tasks access this resource
