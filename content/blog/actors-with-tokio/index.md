@@ -4,7 +4,7 @@ date = 2021-02-13
 description = "This article is about building actors with Tokio directly, without using any actor libraries such as Actix. This turns out to be rather easy to do, however there are some details you should be aware of:"
 
 [extra]
-revised = 2021-02-13
+revised = 2021-02-15
 keywords = "rust, tokio, actor, async, await, actix"
 +++
 
@@ -358,3 +358,26 @@ This pattern is very useful because it isolates the complexity associated with
 performing IO, meaning that the rest of the program can pretend that writing
 something to the connection happens instantly, although the actual writing
 happens sometime later when the actor processes the message.
+
+## Beware of cycles
+
+I already talked a bit about cycles under the heading “Actors sending messages
+to other actors”, where I discussed shutdown of actors that form a cycle.
+However, shutdown is not the only problem that cycles can cause, because a cycle
+can also result in a deadlock where each actor in the cycle is waiting for the
+next actor to receive a message, but that next actor wont receive that message
+until its next actor receives a message, and so on.
+
+To avoid such a deadlock, you must make sure that there are no cycles of
+channels with bounded capacity. The reason for this is that the `send` method on
+a bounded channel does not return immediately. Channels whose `send` method
+always returns immediately do not count in this kind of cycle, as you cannot
+deadlock on such a `send`.
+
+Note that this means that a oneshot channel cannot be part of a deadlocked
+cycle, since their `send` method always returns immediately. Note also that if
+you are using `try_send` rather than `send` to send the message, that also
+cannot be part of the deadlocked cycle.
+
+Thanks to [matklad](https://matklad.github.io/) for pointing out the issues
+with cycles and deadlocks.
