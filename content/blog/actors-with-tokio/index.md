@@ -171,8 +171,8 @@ single-consumer channel. Since the channel allows multiple producers, we can
 freely clone our handle to the actor, allowing us to talk to it from multiple
 places.
 
-[`oneshot`]: https://docs.rs/tokio/0.3/tokio/sync/oneshot/index.html
-[`mpsc`]: https://docs.rs/tokio/0.3/tokio/sync/mpsc/index.html
+[`oneshot`]: https://docs.rs/tokio/1/tokio/sync/oneshot/index.html
+[`mpsc`]: https://docs.rs/tokio/1/tokio/sync/mpsc/index.html
 
 ## A run method on a struct
 
