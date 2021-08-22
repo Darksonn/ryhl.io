@@ -4,7 +4,7 @@ date = 2020-12-21
 description = "The async/await feature in Rust is implemented using a mechanism known as cooperative scheduling, and this has some important consequences for people who write asynchronous Rust code."
 
 [extra]
-revised = 2020-12-21
+revised = 2021-08-22
 keywords = "rust, blocking, async, await, Tokio"
 +++
 
