@@ -24,6 +24,8 @@ If you remember only one thing from this article, this should be it:
 
 <!-- more -->
 
+Translations: [chinese](https://bingowith.me/2021/05/09/translation-async-what-is-blocking/)
+
 ## Blocking vs. non-blocking code
 
 The naive way to write an application that works on many things at the same time is to
