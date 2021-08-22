@@ -161,9 +161,9 @@ To give a sense of scale of how much time is too much, a good rule of thumb is n
 than 10 to 100 microseconds between each `.await`. That said, this depends on the kind of
 application you are writing.
 
-[`sleep`]: https://docs.rs/tokio/0.3/tokio/time/fn.sleep.html
-[`tokio::join!`]: https://docs.rs/tokio/0.3/tokio/macro.join.html
-[`tokio::spawn`]: https://docs.rs/tokio/0.3/tokio/fn.spawn.html
+[`sleep`]: https://docs.rs/tokio/1/tokio/time/fn.sleep.html
+[`tokio::join!`]: https://docs.rs/tokio/1/tokio/macro.join.html
+[`tokio::spawn`]: https://docs.rs/tokio/1/tokio/fn.spawn.html
 
 ## What if I want to block?
 
@@ -182,7 +182,7 @@ this:
  2. Use the [`rayon`] crate.
  3. Spawn a dedicated thread with [`std::thread::spawn`].
 
-[`tokio::task::spawn_blocking`]: https://docs.rs/tokio/0.3/tokio/task/fn.spawn_blocking.html
+[`tokio::task::spawn_blocking`]: https://docs.rs/tokio/1/tokio/task/fn.spawn_blocking.html
 [`rayon`]: https://lib.rs/crates/rayon
 [`std::thread::spawn`]: https://doc.rust-lang.org/stable/std/thread/fn.spawn.html
 
@@ -204,7 +204,7 @@ efficiently if the number of threads is equal to the number of CPU cores. That s
 you only need a few CPU-bound computations, I wont blame you for running them on
 `spawn_blocking` as it is quite simple to do so.
 
-[`spawn_blocking`]: https://docs.rs/tokio/0.3/tokio/task/fn.spawn_blocking.html
+[`spawn_blocking`]: https://docs.rs/tokio/1/tokio/task/fn.spawn_blocking.html
 [`diesel`]: https://lib.rs/crates/diesel
 
 <div class="with-exec-button">
@@ -304,7 +304,7 @@ parallel iterators are blocking.
 
 [`rayon`]: https://lib.rs/crates/rayon
 [`rayon::spawn`]: https://docs.rs/rayon/1/rayon/fn.spawn.html
-[`tokio::sync::oneshot`]: https://docs.rs/tokio/0.3/tokio/sync/oneshot/index.html
+[`tokio::sync::oneshot`]: https://docs.rs/tokio/1/tokio/sync/oneshot/index.html
 
 ### Spawn a dedicated thread
 
