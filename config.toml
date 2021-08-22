@@ -1,6 +1,5 @@
 base_url = "https://ryhl.io"
 compile_sass = true
-highlight_code = true
 generate_feed = true
 feed_filename = "rss.xml"
 
@@ -8,6 +7,9 @@ title = "Alice Ryhl"
 description = "Personal website"
 
 default_language = "en"
+
+[markdown]
+highlight_code = true
 
 [extra]
 keywords = "ryhl"
