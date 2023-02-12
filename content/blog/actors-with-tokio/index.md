@@ -4,7 +4,7 @@ date = 2021-02-13
 description = "This article is about building actors with Tokio directly, without using any actor libraries such as Actix. This turns out to be rather easy to do, however there are some details you should be aware of:"
 
 [extra]
-revised = 2021-02-15
+revised = 2023-02-12
 keywords = "rust, tokio, actor, async, await, actix"
 +++
 
@@ -149,7 +149,7 @@ dropped.
 
 The first instance of this in our example is the line in the actor where we
 respond to the message we were sent. This can happen if the receiver is no
-longer interested in the result of the operation, e.g. the task might that sent
+longer interested in the result of the operation, e.g. if the task that sent
 the message might have been killed.
 
 **Shutdown of actor.** We can detect when the actor should shut down by looking
