@@ -353,8 +353,7 @@ task yielding][coop] from the Tokio blog.
 [`std::sync::Mutex`]: https://doc.rust-lang.org/stable/std/sync/struct.Mutex.html
 [coop]: https://tokio.rs/blog/2020-04-preemption
 
-Thanks to [Chris Krycho] and [snocl] for reading drafts of this post and providing
+Thanks to [Chris Krycho] and Erika Clasen for reading drafts of this post and providing
 helpful advice. All mistakes are mine.
 
 [Chris Krycho]: https://v5.chriskrycho.com/
-[snocl]: https://snor.re/
