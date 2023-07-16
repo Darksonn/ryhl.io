@@ -2,10 +2,9 @@
 title = "Welcome"
 +++
 
-My name is Alice Ryhl. I am a software developer and mathematician, currently a
-student at the Technical University of Denmark. I am one of the primary
-maintainers of the widely used Rust library [Tokio]. Additionally, I work at
-Google in the Android Security and Privacy team, where I enable other teams to
-use Rust in Android.
+My name is Alice Ryhl. I am a Software Engineer at Google and a member of the
+core maintainer team for [Tokio]. At Google, I work on the Android Security and
+Privacy team, where I am currently working on [Rust for Linux].
 
 [Tokio]: https://tokio.rs/
+[Rust for Linux]: https://rust-for-linux.com/

@@ -2,6 +2,7 @@
 title = "Shared mutable state in Rust"
 date = 2022-01-01
 description = ""
+draft = true
 
 [extra]
 revised = 2022-01-01
