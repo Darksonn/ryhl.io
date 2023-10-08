@@ -43,6 +43,10 @@ chat messages between the other tasks. This is useful because the master task
 can avoid having to deal with network IO, and the connection tasks can focus
 exclusively on dealing with network IO.
 
+This article is also available as [a talk on YouTube].
+
+[a talk on YouTube]: https://www.youtube.com/watch?v=fTXuGRP1ee4
+
 ## The Recipe
 
 An actor is split into two parts: the task and the handle. The task is the
