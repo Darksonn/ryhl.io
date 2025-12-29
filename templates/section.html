@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1>{{ section.title }}</h1>
+{{ section.content | safe }}
+
+<section>
+{%- for page in section.pages | sort(attribute="date") | reverse %}
+<article class="article-snippet">
+  <header>
+  <h3><a href="{% if page.extra.redirect_to %}{{ page.extra.redirect_to | safe }}{% else %}{{ page.permalink | safe }}{% endif %}">
+    {{ page.title }}
+  </a></h3>
+  <time class="postdate" datetime="{{ page.date }}">{{ page.date }}</time>
+  </header>
+  <div class="description">
+    {{ page.summary | safe }}
+    <a class="keep-reading" href="{% if page.extra.redirect_to %}{{ page.extra.redirect_to | safe }}{% else %}{{ page.permalink | safe }}{% endif %}">Continue Reading</a>
+  </div>
+</article>
+{%- endfor %}
+</section>
+{% endblock body %}

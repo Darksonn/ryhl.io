@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ config.title }} &ndash; Front page{% endblock title %}</title>
+    <meta name="keywords" content="{% block keywords %}{{ config.extra.keywords }}{% endblock keywords %}">
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+    <meta name="language" content="en-US">
+    <meta name="robots" content="index,follow">
+    {%- block date %}{% endblock date %}
+    <meta name="author" content="{% block metaauthor %}{{ config.author }}, {{ config.extra.author_email }}{% endblock metaauthor %}">
+    <meta name="pagename" content="{% block pagename %}{{ config.title }} - {{ config.description }}{% endblock pagename %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ get_url(path="style.css", cachebust=true) | safe }}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    {% if config.generate_feeds -%}
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='rss.xml') | safe }}">
+    {%- endif %}
+    <link rel="canonical" href="{{ current_url | safe }}">
+  </head>
+  <body>
+    <nav id="sidebar" class="bar">
+      {%- block sidebar %}
+      <a class="sitetitle" href="/">{% block sidebartitle %}{{ config.title }}{% endblock sidebartitle %}</a>
+      <span class="subtitle">{{ config.description }}</span>
+
+      <ul class="sidebar-links">
+        {%- for link in config.extra.sidebar_links %}
+        <li><a href="{{link.url | safe}}">{{link.text}}</a></li>
+        {%- endfor %}
+      </ul>
+      {%- endblock sidebar %}
+    </nav>
+    <nav id="topbar" class="bar">
+      {%- block topbar %}
+      <a class="sitetitle" href="/">{% block topbartitle %}{{ config.title }}{% endblock sidebartitle %}</a>
+      <img id="topbar-burger" alt="open navigation" src="/hamburger.svg" onclick="document.getElementById('topbar-open').style.display = window.topOpen ? 'none' : 'block'; window.topOpen = !window.topOpen">
+      <div id="topbar-open" style="display:none">
+        <ul class="sidebar-links">
+          {%- for link in config.extra.sidebar_links %}
+          {%- if link.skip_mobile %}
+          {%- else %}
+          <li><a href="{{link.url | safe}}">{{link.text}}</a></li>
+          {%- endif %}
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endblock topbar %}
+    </nav>
+    <div id="content">
+      <main>
+        {%- block body %}{% endblock body %}
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,12 +1,13 @@
 base_url = "https://ryhl.io"
 compile_sass = true
-generate_feed = true
-feed_filename = "rss.xml"
+generate_feeds = true
+feed_filenames = ["rss.xml"]
 
 title = "Alice Ryhl"
 description = "Personal website"
 
 default_language = "en"
+author = "Alice Ryhl"
 
 [markdown]
 highlight_code = true
@@ -14,11 +15,12 @@ highlight_code = true
 [extra]
 keywords = "ryhl"
 
-author = "Alice Ryhl"
 author_email = "alice@ryhl.io"
 
 sidebar_links = [
   { url = "/", text = "Home" },
+  { url = "/blog", text = "All articles" },
+  { url = "/talks", text = "Talks & Podcasts" },
   { url = "https://www.linkedin.com/in/aliceryhl/", text = "LinkedIn" },
   { url = "https://github.com/Darksonn/", text = "GitHub" },
   { url = "mailto:alice@ryhl.io", text = "Email" },

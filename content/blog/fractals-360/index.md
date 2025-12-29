@@ -100,7 +100,7 @@ and not flat. This is pretty easy using the [Python tool “spatial
 media”][spatial-media].  The commands I used to make my video files spherical
 are the following:
 
-```text
+```txt
 $ git clone --depth=1 https://github.com/google/spatial-media spatial-media
 $ python2 ./spatial-media/spatialmedia/__main__.py -i flat-video.mp4 spherical-video.mp4
 ```

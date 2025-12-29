@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1>{{ section.title }}</h1>
+{{ section.content | safe }}
+
+<section>
+<ul class="spaced-list">
+{% for talk in section.extra.talks %}
+    <li>
+        <strong><a href="{{ talk.url }}">{{ talk.title }}</a></strong>
+        {% if talk.co_authors %}
+            (with {{ talk.co_authors | join(sep=", ") }})
+        {% endif %}
+        <br>
+        {{ talk.event }} {{ talk.date }}
+        {% if talk.keynote %}
+            (Keynote)
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>
+</section>
+{% endblock body %}

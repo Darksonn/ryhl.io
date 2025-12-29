@@ -64,7 +64,7 @@ converged to. I picked the function
 as the one used in the iteration step, since it's a rather simple function,
 but not so simple it doesn't show any fractal behaviour.
 
-```fsharp
+```fs
 open System
 open System.Drawing
 
@@ -134,7 +134,7 @@ more interesting image: we can change the darkness depending on the amount
 of iterations we made before stopping. We make the following chances to the
 code:
 
-```fsharp
+```fs
 (* now only performs as many iterations as necessary,
  * returns the amount of iterations performed too *)
 let compute_pixel (z:C) =
@@ -167,7 +167,7 @@ distances from the values <i>x</i><sub>i</sub> to the root it converged to,
 and base the darkness on that sum. The following changes to the code
 incorporates this:
 
-```fsharp
+```fs
 let compute_pixel (z:C) =
   let rec aux z n =
     let z2 = step z
@@ -194,15 +194,15 @@ This is better than before, but adding the distances linearly doesn't quite
 give the gradient I want. The following code applies a sublinear function to
 the distance before adding them together:
 
-```fsharp
+```fs
 let compute_pixel (z:C) =
-t rec aux z n =
-let z2 = step z
-if n > 100 then (z2,0.0) else
-  let (zf,sum) = aux z2 (n+1)
-  let delta = (z - zf).Magnitude
-  (zf, sum + 1.0 - 1./(1.+exp (delta+3.5)-exp 3.5))
-x z 0
+  let rec aux z n =
+    let z2 = step z
+    if n > 100 then (z2,0.0) else
+      let (zf,sum) = aux z2 (n+1)
+      let delta = (z - zf).Magnitude
+      (zf, sum + 1.0 - 1./(1.+exp (delta+3.5)-exp 3.5))
+  aux z 0
 ```
 
 Running the updated code produces the following image:
