@@ -3,6 +3,18 @@ title = "Conference Talks & Podcasts"
 template = "talks.html"
 
 [[extra.talks]]
+title = "Upcoming Talk (Title TBD)"
+url = "https://www.tokioconf.com/"
+date = "2026"
+event = "TokioConf"
+
+[[extra.talks]]
+title = "Upcoming Talk (Title TBD)"
+url = "https://2026.rustweek.org/talks/alice_talk/"
+date = "2026"
+event = "RustWeek"
+
+[[extra.talks]]
 title = "So you want to write a driver in Rust?"
 url = "https://www.youtube.com/watch?v=sGbNzu_5FUI"
 date = "2025"
