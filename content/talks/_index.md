@@ -28,6 +28,13 @@ event = "Linux Plumbers"
 co_authors = ["Daniel Almeida"]
 
 [[extra.talks]]
+title = "What About Rust?"
+url = "https://www.youtube.com/watch?v=7DqQbgDCS_8"
+date = "2025"
+event = "Wookash Podcast"
+co_authors = ["Łukasz Ściga"]
+
+[[extra.talks]]
 title = "Rust project goals 2024: Stabilizing Rust in the Linux Kernel"
 url = "https://www.youtube.com/watch?v=J2M3EGUgq0c"
 date = "2025"
@@ -40,13 +47,6 @@ date = "2024"
 event = "Open Source Summit"
 co_authors = ["Anna-Maria Behnsen", "Dan Williams", "Josef Bacik", "Jonathan Corbet"]
 keynote = true
-
-[[extra.talks]]
-title = "What About Rust?"
-url = "https://www.youtube.com/watch?v=7DqQbgDCS_8"
-date = "2024"
-event = "Wookash Podcast"
-co_authors = ["Łukasz Ściga"]
 
 [[extra.talks]]
 title = "What it takes to keep Tokio running"
