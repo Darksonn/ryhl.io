@@ -11,7 +11,7 @@ highlighted_articles = [
 ]
 
 [[extra.featured_talks]]
-title = "Upcoming Talk (Title TBD)"
+title = "Opening Keynote & Workshop"
 url = "https://www.tokioconf.com/"
 date = "2026"
 event = "TokioConf"
@@ -72,10 +72,9 @@ keynote = true
 
 My name is Alice Ryhl. I am a Software Engineer at Google, a member of the
 core maintainer team for [Tokio], and an [advisor to the Rust language team].
-At Google, I work on the Android Security and Privacy team, where I am
-currently working on [Rust for Linux]. My work in the kernel includes the
-[Rust Binder] and [Tyr] GPU drivers. I also lead the [in-place
-initialization] Rust project goal.
+At Google, I work on the Android Rust team, where I am currently working on
+[Rust for Linux]. My work in the kernel includes the [Rust Binder] and [Tyr]
+GPU drivers. I also lead the [in-place initialization] Rust project goal.
 
 [Tokio]: https://tokio.rs/
 [advisor to the Rust language team]: https://www.rust-lang.org/governance/teams/lang#team-lang-advisors

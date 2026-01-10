@@ -3,7 +3,7 @@ title = "Conference Talks & Podcasts"
 template = "talks.html"
 
 [[extra.talks]]
-title = "Upcoming Talk (Title TBD)"
+title = "Opening Keynote & Workshop"
 url = "https://www.tokioconf.com/"
 date = "2026"
 event = "TokioConf"

@@ -6,7 +6,7 @@ description = "An introduction to the Rust implementation of the Binder driver."
 [extra]
 keywords = "rust, binder, linux, kernel"
 revised = 2023-11-01
-redirect_to = "https://lore.kernel.org/rust-for-linux/20231101-rust-binder-v1-0-08ba9197f637@google.com/"
+redirect_to = "https://lwn.net/ml/linux-kernel/20231101-rust-binder-v1-0-08ba9197f637@google.com/"
 +++
 
 We're generally not proponents of rewrites (nasty uncomfortable things
