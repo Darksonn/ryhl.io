@@ -236,7 +236,7 @@ That said, there is a version that works. By fixing the two above problems, you
 end up with the following:
 ```rust
 impl MyActor {
-    async fn run(&mut self) {
+    async fn run(mut self) {
         while let Some(msg) = self.receiver.recv().await {
             self.handle_message(msg);
         }
