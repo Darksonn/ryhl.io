@@ -3,24 +3,32 @@ title = "Welcome"
 
 [extra]
 highlighted_articles = [
-    "blog/rust-binder.md",
     "blog/async-what-is-blocking/index.md",
     "blog/actors-with-tokio/index.md",
+    "blog/rust-binder.md",
     "blog/target-modifiers.md",
     "blog/derive-smart-pointer.md"
 ]
 
 [[extra.featured_talks]]
-title = "Opening Keynote & Workshop"
-url = "https://www.tokioconf.com/"
+title = "Why Rust is different"
+url = "https://newsletter.pragmaticengineer.com/p/why-rust-is-different-with-alice"
 date = "2026"
-event = "TokioConf"
+event = "The Pragmatic Engineer Podcast"
 
 [[extra.featured_talks]]
-title = "Upcoming Talk (Title TBD)"
-url = "https://2026.rustweek.org/talks/alice_talk/"
+title = "Completion-based IO"
+url = "https://www.youtube.com/watch?v=CmLAHUuUsAQ"
 date = "2026"
 event = "RustWeek"
+
+[[extra.featured_talks]]
+title = "Opening Keynote"
+url = "https://www.youtube.com/watch?v=d76btqAUWSE"
+date = "2026"
+event = "TokioConf"
+co_authors = ["Carl Lerche"]
+keynote = true
 
 [[extra.featured_talks]]
 title = "So you want to write a driver in Rust?"

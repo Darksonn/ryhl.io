@@ -3,16 +3,38 @@ title = "Conference Talks & Podcasts"
 template = "talks.html"
 
 [[extra.talks]]
-title = "Opening Keynote & Workshop"
-url = "https://www.tokioconf.com/"
+title = "Opening Keynote"
+url = "https://rustlab.it/"
 date = "2026"
-event = "TokioConf"
+event = "RustLab"
+keynote = true
 
 [[extra.talks]]
-title = "Upcoming Talk (Title TBD)"
-url = "https://2026.rustweek.org/talks/alice_talk/"
+title = "Rust for Linux Live"
+url = "https://corrode.dev/podcast/s06e04-rust4linux/"
+date = "2026"
+event = "Rust in Production Podcast"
+co_authors = ["Greg Kroah-Hartman"]
+
+[[extra.talks]]
+title = "Why Rust is different"
+url = "https://newsletter.pragmaticengineer.com/p/why-rust-is-different-with-alice"
+date = "2026"
+event = "The Pragmatic Engineer Podcast"
+
+[[extra.talks]]
+title = "Completion-based IO"
+url = "https://www.youtube.com/watch?v=CmLAHUuUsAQ"
 date = "2026"
 event = "RustWeek"
+
+[[extra.talks]]
+title = "Opening Keynote"
+url = "https://www.youtube.com/watch?v=d76btqAUWSE"
+date = "2026"
+event = "TokioConf"
+co_authors = ["Carl Lerche"]
+keynote = true
 
 [[extra.talks]]
 title = "So you want to write a driver in Rust?"
